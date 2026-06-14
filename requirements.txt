@@ -1,0 +1,6 @@
+flask
+datasets
+pandas
+numpy
+scikit-learn
+nltk
