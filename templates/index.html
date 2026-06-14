@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Dashboard</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>💬 Sentiment Analysis Dashboard</h1>
+
+    <div class="card accuracy-card">
+        <h3>📊 Model Accuracy</h3>
+        <p>{{ "%.2f"|format(accuracy*100) }}%</p>
+    </div>
+
+    <form method="POST">
+
+        <textarea
+        name="review"
+        placeholder="Type or paste your review here..."
+        required></textarea>
+
+        <button type="submit">
+            🔍 Analyze Sentiment
+        </button>
+
+    </form>
+
+    {% if prediction %}
+
+    <div class="result
+    {% if 'Positive' in prediction %}
+        positive
+    {% else %}
+        negative
+    {% endif %}">
+
+        <h2>{{ prediction }}</h2>
+
+        <p>
+            Confidence:
+            <strong>{{ "%.2f"|format(confidence*100) }}%</strong>
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    {% if tokens %}
+
+    <div class="card token-card">
+
+        <h3>📝 Tokenization Output</h3>
+
+        <p>{{ tokens }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

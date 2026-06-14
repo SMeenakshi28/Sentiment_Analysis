@@ -1,0 +1,212 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    background:linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+/* Container */
+
+.container{
+    width:100%;
+    max-width:900px;
+}
+
+/* Heading */
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+    font-size:2.5rem;
+    animation:fadeIn 1s ease;
+}
+
+/* Glass Cards */
+
+.card,
+.result{
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin:20px 0;
+
+    color:white;
+
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+
+    transition:0.4s;
+}
+
+.card:hover,
+.result:hover{
+    transform:translateY(-5px);
+}
+
+/* Accuracy Card */
+
+.accuracy-card p{
+    font-size:2rem;
+    font-weight:700;
+    color:#ffd700;
+}
+
+/* Form */
+
+form{
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(12px);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+
+textarea{
+    width:100%;
+    height:180px;
+
+    border:none;
+
+    outline:none;
+
+    resize:none;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+    background:rgba(255,255,255,0.9);
+}
+
+textarea:focus{
+    box-shadow:0 0 15px #00d4ff;
+}
+
+/* Button */
+
+button{
+    width:100%;
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(
+    45deg,
+    #00c6ff,
+    #0072ff);
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+
+    box-shadow:0 0 20px rgba(0,114,255,0.6);
+}
+
+button:active{
+    transform:scale(0.97);
+}
+
+/* Result Cards */
+
+.positive{
+    border-left:8px solid #00ff95;
+}
+
+.positive h2{
+    color:#00ff95;
+}
+
+.negative{
+    border-left:8px solid #ff4d6d;
+}
+
+.negative h2{
+    color:#ff4d6d;
+}
+
+/* Token Section */
+
+.token-card p{
+    word-wrap:break-word;
+    line-height:1.8;
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2rem;
+    }
+
+    .card,
+    .result,
+    form{
+        padding:18px;
+    }
+
+    textarea{
+        height:150px;
+    }
+}
